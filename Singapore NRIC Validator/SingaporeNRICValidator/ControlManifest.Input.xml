@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="SampleNamespace" constructor="SingaporeNRICValidator" version="0.0.1" display-name-key="SingaporeNRICValidator_Display_Key" description-key="SingaporeNRICValidator_Desc_Key" control-type="standard">
+    <property name="nricNumber" display-name-key="nricNumber_Display_Key" description-key="nricNumber_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="isValid" display-name-key="isValid_Display_Key" description-key="isValid_Desc_Key" of-type="TwoOptions" usage="output" required="false" />
+    <resources>
+      <code path="index.ts" order="1"/>
+      <css path="css/SingaporeNRICValidator.css" order="2" />
+      <resx path="strings/SingaporeNRICValidator.1033.resx" version="1.0.0" />
+    </resources>
+  </control>
+</manifest>

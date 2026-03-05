@@ -1,0 +1,54 @@
+.nric-validator-container {
+	max-width: 320px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	padding: 16px;
+}
+
+.nric-label {
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	color: #323130;
+	margin-bottom: 6px;
+}
+
+.nric-input {
+	display: block;
+	width: 100%;
+	padding: 6px 10px;
+	font-size: 14px;
+	border: 1px solid #8a8886;
+	border-radius: 2px;
+	box-sizing: border-box;
+	outline: none;
+	transition: border-color 0.2s ease;
+}
+
+.nric-input:focus {
+	border-color: #0078d4;
+	box-shadow: 0 0 0 1px #0078d4;
+}
+
+.nric-input--valid {
+	border-color: #107c10;
+	box-shadow: 0 0 0 1px #107c10;
+}
+
+.nric-input--invalid {
+	border-color: #a4262c;
+	box-shadow: 0 0 0 1px #a4262c;
+}
+
+.nric-status {
+	margin-top: 6px;
+	font-size: 12px;
+	min-height: 18px;
+}
+
+.nric-status--valid {
+	color: #107c10;
+}
+
+.nric-status--invalid {
+	color: #a4262c;
+}
