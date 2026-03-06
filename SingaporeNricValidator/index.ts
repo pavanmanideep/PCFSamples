@@ -1,10 +1,12 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 
-export class Singapore implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+export class NricValidatorControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
     private notifyOutputChanged: () => void;
     private inputElement: HTMLInputElement;
     private messageElement: HTMLDivElement;
     private currentValue: string;
+    private container: HTMLDivElement | null = null;
+    private isReadOnly: boolean = false;
 
     constructor() {
         this.notifyOutputChanged = () => {
@@ -30,6 +32,8 @@ export class Singapore implements ComponentFramework.StandardControl<IInputs, IO
         container: HTMLDivElement
     ): void {
         this.notifyOutputChanged = notifyOutputChanged;
+        this.container = container;
+        this.isReadOnly = context.mode.isControlDisabled;
         this.currentValue = this.normalizeInput(context.parameters.nricValue.raw);
 
         this.inputElement = document.createElement("input");
@@ -40,12 +44,15 @@ export class Singapore implements ComponentFramework.StandardControl<IInputs, IO
         this.inputElement.style.width = "100%";
         this.inputElement.style.boxSizing = "border-box";
         this.inputElement.style.padding = "8px";
+        this.inputElement.disabled = this.isReadOnly;
 
         this.messageElement = document.createElement("div");
         this.messageElement.style.marginTop = "6px";
         this.messageElement.style.fontSize = "12px";
 
-        this.inputElement.addEventListener("input", this.handleInputChange);
+        // Bind the event handler with proper context
+        this.inputElement.addEventListener("input", (e) => this.handleInputChange(e));
+        this.inputElement.addEventListener("change", (e) => this.handleInputChange(e));
 
         container.appendChild(this.inputElement);
         container.appendChild(this.messageElement);
@@ -60,11 +67,14 @@ export class Singapore implements ComponentFramework.StandardControl<IInputs, IO
      */
     public updateView(context: ComponentFramework.Context<IInputs>): void {
         const latestValue = this.normalizeInput(context.parameters.nricValue.raw);
+        this.isReadOnly = context.mode.isControlDisabled;
+        
         if (latestValue !== this.currentValue) {
             this.currentValue = latestValue;
             this.inputElement.value = latestValue;
         }
 
+        this.inputElement.disabled = this.isReadOnly;
         this.renderValidationMessage();
     }
 
@@ -83,10 +93,14 @@ export class Singapore implements ComponentFramework.StandardControl<IInputs, IO
      * i.e. cancelling any pending remote calls, removing listeners, etc.
      */
     public destroy(): void {
-        this.inputElement.removeEventListener("input", this.handleInputChange);
+        // Remove all event listeners that were added in init
+        if (this.inputElement) {
+            this.inputElement.removeEventListener("input", this.handleInputChange.bind(this));
+            this.inputElement.removeEventListener("change", this.handleInputChange.bind(this));
+        }
     }
 
-    private readonly handleInputChange = (): void => {
+    private handleInputChange = (event?: Event): void => {
         const normalized = this.normalizeInput(this.inputElement.value);
         if (this.inputElement.value !== normalized) {
             this.inputElement.value = normalized;
