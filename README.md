@@ -45,8 +45,12 @@ Before you begin, ensure you have the following installed:
    ```bash
    npm install
    ```
+   It might give 4 high severity warnings, but those are browser specific and ok for Production
+   
+   <img width="959" height="477" alt="image" src="https://github.com/user-attachments/assets/cd1499ac-23d1-468d-91e0-9a6b9726d29e" />
 
-3. **Build the component**
+
+4. **Build the component**
    ```bash
    npm run build
    ```
