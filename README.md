@@ -1,6 +1,6 @@
-# Singapore NRIC Validator - PCF Control
+# Singapore NRIC/FIN Validator - PCF Control
 
-A PowerApps Component Framework (PCF) control for validating Singapore NRIC (National Registration Identity Card) and FIN (Foreign Identification Number) numbers.
+A PowerApps Component Framework (PCF) control for validating Singapore NRIC/FIN (National Registration Identity Card) and FIN (Foreign Identification Number) numbers.
 
 ## Features
 
