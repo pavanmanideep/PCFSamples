@@ -160,6 +160,9 @@ Try these sample valid NRIC numbers in the test harness:
 Model Driven Apps
   <img width="959" height="302" alt="image" src="https://github.com/user-attachments/assets/ad3623d0-2d5b-47c7-b337-29783db81f94" />
 
+  <img width="954" height="296" alt="image" src="https://github.com/user-attachments/assets/d750cd14-b6bb-4d40-af4a-a1c383665551" />
+
+
 
 ## Contributing
 
