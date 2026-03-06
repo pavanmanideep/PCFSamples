@@ -48,6 +48,8 @@ Before you begin, ensure you have the following installed:
    ```
    <img width="383" height="175" alt="image" src="https://github.com/user-attachments/assets/5ffe9e28-a5de-43e3-ba7b-dbf466e8d723" />
 
+   Based on your browser, you might see some additional warnings or errors, but can ignore them.
+
 4. **Build the component**
    ```bash
    npm run build
