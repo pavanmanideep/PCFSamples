@@ -111,8 +111,17 @@ SingaporeNricValidator/
 3. **Import to Power Apps**
    - Navigate to [Power Apps](https://make.powerapps.com)
    - Go to Solutions
-   - Import the generated solution package
-   - Publish all customizations
+   - Import the managed solution package available for this control
+   - Open any entity form
+     <img width="800" height="332" alt="image" src="https://github.com/user-attachments/assets/040e6bca-8ae5-4b72-a6da-b44db8ef8a94" />
+     Next
+     <img width="959" height="214" alt="image" src="https://github.com/user-attachments/assets/208fcaf7-2dc8-4584-b75b-1bc2ce551a38" />
+     Create a single line text column
+     <img width="959" height="410" alt="image" src="https://github.com/user-attachments/assets/cf55c19b-803d-48cf-be4a-f0bb83839472" />
+     
+
+
+
 
 ### Adding to a Form
 
@@ -135,7 +144,7 @@ SingaporeNricValidator/
 
 ## How the Validation Works
 
-The control implements the official Singapore NRIC checksum algorithm:
+The control implements the official Singapore NRIC/FIN checksum algorithm:
 
 1. **Format Check**: Verifies the format matches `[STFGM][7 digits][Letter]`
 2. **Checksum Calculation**:
@@ -168,7 +177,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- Based on the official Singapore NRIC validation algorithm
+- Based on the official Singapore NRIC/FIN validation algorithm
 - Built with PowerApps Component Framework (PCF)
 - Developed for use in Microsoft Power Apps model-driven applications
 
