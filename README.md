@@ -120,7 +120,7 @@ SingaporeNricValidator/
      <img width="800" height="332" alt="image" src="https://github.com/user-attachments/assets/040e6bca-8ae5-4b72-a6da-b44db8ef8a94" />
      Next
      <img width="959" height="214" alt="image" src="https://github.com/user-attachments/assets/208fcaf7-2dc8-4584-b75b-1bc2ce551a38" />
-     Create a single line text column
+     Create a single line text column, let's say we create NRIC/FIN 
      <img width="959" height="410" alt="image" src="https://github.com/user-attachments/assets/cf55c19b-803d-48cf-be4a-f0bb83839472" />
      
 
