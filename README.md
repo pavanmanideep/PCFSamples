@@ -156,6 +156,10 @@ Try these sample valid NRIC numbers in the test harness:
 - T1234567J
 - F1234567N
 - G1234567X
+  
+Model Driven Apps
+  <img width="959" height="302" alt="image" src="https://github.com/user-attachments/assets/ad3623d0-2d5b-47c7-b337-29783db81f94" />
+
 
 ## Contributing
 
