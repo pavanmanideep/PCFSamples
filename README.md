@@ -45,10 +45,7 @@ Before you begin, ensure you have the following installed:
    ```bash
    npm install
    ```
-   It might give 4 high severity warnings, but those are browser specific and ok for Production
-   
-   <img width="959" height="477" alt="image" src="https://github.com/user-attachments/assets/cd1499ac-23d1-468d-91e0-9a6b9726d29e" />
-
+   <img width="383" height="175" alt="image" src="https://github.com/user-attachments/assets/5ffe9e28-a5de-43e3-ba7b-dbf466e8d723" />
 
 4. **Build the component**
    ```bash
