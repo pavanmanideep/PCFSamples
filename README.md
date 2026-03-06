@@ -71,9 +71,6 @@ npm run clean
 # Rebuild the control
 npm run rebuild
 
-# Run linting
-npm run lint
-
 # Fix linting issues
 npm run lint:fix
 
