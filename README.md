@@ -184,6 +184,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Based on the official Singapore NRIC/FIN validation algorithm
 - Built with PowerApps Component Framework (PCF)
 - Developed for use in Microsoft Power Apps model-driven applications
+- Wikipedia page: https://en.wikipedia.org/wiki/National_Registration_Identity_Card
 
 ## Support
 
