@@ -119,7 +119,7 @@ SingaporeNricValidator/
 1. Open your model-driven app or form
 2. Select the field you want to replace with the NRIC validator
 3. Click "Change component" or add a custom field
-4. Select "NricValidator"
+4. Select "ecellors_NricFin.Validator"
 5. Configure the `nricValue` property to bind to your data field
 6. Save and publish your form
 
@@ -178,4 +178,4 @@ For issues, questions, or contributions, please use the GitHub issue tracker.
 
 ---
 
-**Note**: This control validates the format and checksum of NRIC/FIN numbers but does not verify if the number is actually issued by the Singapore government. Always verify identity documents through official channels.
+**Note**: This control validates the format and checksum of NRIC/FIN numbers but does not verify if the number is actually issued by the Singapore government. Always verify identity documents through official channels. Once the managed solution is imported to the target Power Platform Environment, you may loose the capability to delete the control, so please use at caution.
