@@ -57,21 +57,25 @@ SingaporeNricValidator/
 
 ## Usage in Power Apps
 
-### Deploying to Power Apps
+### Making customizations to this control
 
-1. **Build the solution**
+1. **Clone the Repo**
+
+  git clone **https://github.com/pavanmanideep/Singapore-Identity-Number-Validator-PCFControl.git**
+   
+3. **Build the solution**
    ```bash
    npm run build
    ```
 
-2. **Create a solution package** (using Power Platform CLI)
+4. **Create a solution package** (using Power Platform CLI)
    ```bash
    pac solution init --publisher-name YourPublisher --publisher-prefix prefix
    pac solution add-reference --path ./
    msbuild /t:build /restore
    ```
 
-3. **Import to Power Apps**
+5. **Import to Power Apps**
    - Navigate to [Power Apps](https://make.powerapps.com)
    - Go to Solutions
    - Import the managed solution package available for this control
