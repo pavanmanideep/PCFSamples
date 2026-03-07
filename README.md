@@ -35,52 +35,11 @@ Before you begin, ensure you have the following installed:
 
 ## Installation
 
-1. **Clone the repository**
-   ```bash
-   cd SingaporeNricFinValidator
-   git clone https://github.com/pavanmanideep/Singapore-Identity-Number-Validator-PCFControl.git
-   
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-   <img width="383" height="175" alt="image" src="https://github.com/user-attachments/assets/5ffe9e28-a5de-43e3-ba7b-dbf466e8d723" />
-
-   Based on your browser, you might see some additional warnings or errors, but can ignore them.
-
-4. **Build the component**
-   ```bash
-   npm run build
-   ```
-
-## Development
-
-### Available Scripts
-
-```bash
-# Build the control
-npm run build
-
-# Start the control in test harness with watch mode
-npm run start:watch
-
-# Start the control in test harness
-npm run start
-
-# Clean build artifacts
-npm run clean
-
-# Rebuild the control
-npm run rebuild
-
-# Fix linting issues
-npm run lint:fix
-
-# Refresh TypeScript types
-npm run refreshTypes
-```
+o	Download solution
+o	Go to your Dynamics 365 CRM environment.
+o	Navigate to Settings > Solutions.
+o	Click Import and select the generated zip file.
+o	Follow the prompts to complete the import process.
 
 ### Project Structure
 
