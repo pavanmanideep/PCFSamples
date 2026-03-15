@@ -118,7 +118,7 @@ export class SingaporeNricValidatorControl implements ComponentFramework.Standar
         const normalized = value.toUpperCase();
         const formatRegex = /^[STFGM]\d{7}[A-Z]$/;
         if (!formatRegex.test(normalized)) {
-            return { isValid: false, message: "Please enter a valid Singapore NRIC Number" };
+            return { isValid: false, message: "Please enter a valid Singapore NRIC/FIN Number" };
         }
 
         const prefix = normalized.charAt(0);
@@ -151,9 +151,9 @@ export class SingaporeNricValidatorControl implements ComponentFramework.Standar
 
         const actualChecksum = normalized.charAt(8);
         if (actualChecksum !== expectedChecksum) {
-            return { isValid: false, message: "Please enter a valid Singapore NRIC Number" };
+            return { isValid: false, message: "Please enter a valid Singapore NRIC/FIN Number" };
         }
 
-        return { isValid: true, message: "Valid NRIC/FIN." };
+        return { isValid: true, message: "Enter NRIC/FIN." };
     }
 }
