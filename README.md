@@ -1,3 +1,9 @@
+![License](https://img.shields.io/badge/License-MIT-green)
+![Platform](https://img.shields.io/badge/Platform-Power%20Platform-blue)
+![Type](https://img.shields.io/badge/Type-PCF%20Control-purple)
+![Release](https://img.shields.io/badge/Release-v1.0.0-orange)
+![Downloads](https://img.shields.io/badge/Downloads-1-brightgreen)
+
 # Singapore NRIC/FIN Validator - PCF Control
 
 A PowerApps Component Framework (PCF) control for validating Singapore NRIC/FIN (National Registration Identity Card) and FIN (Foreign Identification Number) numbers.
