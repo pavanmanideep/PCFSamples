@@ -95,21 +95,6 @@ SingaporeNricValidator/
 
       <img width="686" height="267" alt="image" src="https://github.com/user-attachments/assets/4f24fa72-57fd-4925-b1f8-09a0682103ea" />
 
-
-
-### Adding to a Form
-
-1. Open your model-driven app or form
-2. Select the field you want to replace with the NRIC validator
-3. Click "Change component" or add a custom field
-4. Select "ecellors_NricFin.Validator"
-5. Configure the `nricValue` property to bind to your data field
-6. Save and publish your form
-
-### Component Properties
-
-- **nricValue**: Bound text field that stores the NRIC/FIN number
-
 ### Validation Messages
 
 - **Valid NRIC/FIN**: Green message "Valid NRIC/FIN."
