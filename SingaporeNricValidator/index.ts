@@ -154,6 +154,6 @@ export class SingaporeNricValidatorControl implements ComponentFramework.Standar
             return { isValid: false, message: "Please enter a valid Singapore NRIC/FIN Number" };
         }
 
-        return { isValid: true, message: "Enter NRIC/FIN." };
+        return { isValid: true, message: "Valid NRIC/FIN." };
     }
 }
