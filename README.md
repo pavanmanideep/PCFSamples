@@ -40,24 +40,64 @@ Before you begin, ensure you have the following installed:
 
 ## Installation
 
-o	Download solution
-o	Go to your Dynamics 365 CRM environment.
-o	Navigate to Settings > Solutions.
-o	Click Import and select the generated zip file.
-o	Follow the prompts to complete the import process.
+- Download the managed solution zip from the [Releases](https://github.com/pavanmanideep/Singapore-Identity-Number-Validator-PCFControl/releases) page.
+- Go to your Power Platform / Dynamics 365 environment.
+- Navigate to **Settings > Solutions** (or [make.powerapps.com](https://make.powerapps.com) → Solutions).
+- Click **Import** and select the downloaded zip file.
+- Follow the prompts to complete the import process.
 
 ### Project Structure
 
 ```
-SingaporeNricValidator/
-├── SingaporeNricValidator/     # PCF component source
-│   ├── index.ts                # Main component logic
-│   ├── ControlManifest.Input.xml  # Component manifest
-│   └── generated/              # Auto-generated type definitions
-├── EcellorsSingaporeNRICSolution/  # Solution wrapper for deployment
-├── package.json                # NPM dependencies
-├── tsconfig.json               # TypeScript configuration
-└── eslint.config.mjs           # ESLint configuration
+Singapore-Identity-Number-Validator-PCFControl/
+├── SingaporeNricValidator/                    # PCF component source
+│   ├── index.ts                               # Main component logic
+│   ├── ControlManifest.Input.xml              # Component manifest
+│   └── generated/                             # Auto-generated type definitions
+├── EcellorsSingaporeNRICFINSolution/          # Solution wrapper for deployment
+│   ├── EcellorsSingaporeNRICFINSolution.cdsproj
+│   └── Other/
+│       └── Solution.xml
+├── package.json                               # NPM dependencies
+├── tsconfig.json                              # TypeScript configuration
+└── eslint.config.mjs                          # ESLint configuration
+```
+
+## Pushing the Control to a Power Platform Environment
+
+### Option 1 – Quick push using `pac pcf push` (recommended for development)
+
+Use this option to push directly to an environment without creating a full solution package.
+
+```bash
+# 1. Authenticate with your Power Platform environment
+pac auth create --url https://<your-org>.crm.dynamics.com
+
+# 2. Build the PCF control
+npm run build
+
+# 3. Push the control to the environment
+pac pcf push --publisher-prefix ecellors
+```
+
+> **Note:** `pac pcf push` deploys the control directly and is best suited for development/testing. The control will be registered as `ecellors_SingaporeNRICFINValidatorControl` in the environment.
+
+### Option 2 – Build and deploy a managed solution (recommended for production)
+
+Use this option to create a managed solution zip file for importing into production environments.
+
+```bash
+# 1. Build the PCF control
+npm run build
+
+# 2. Build the solution package (generates a zip in EcellorsSingaporeNRICFINSolution/bin/Release/)
+cd EcellorsSingaporeNRICFINSolution
+msbuild /t:build /restore /p:configuration=Release
+
+# 3. Import the generated zip to your environment
+#    - Navigate to https://make.powerapps.com
+#    - Go to Solutions → Import solution
+#    - Select: EcellorsSingaporeNRICFINSolution/bin/Release/EcellorsSingaporeNRICFINSolution_managed.zip
 ```
 
 ## Usage in Power Apps
@@ -66,19 +106,22 @@ SingaporeNricValidator/
 
 1. **Clone the Repo**
 
-  git clone **https://github.com/pavanmanideep/Singapore-Identity-Number-Validator-PCFControl.git**
-   
-3. **Build the solution**
+   ```bash
+   git clone https://github.com/pavanmanideep/Singapore-Identity-Number-Validator-PCFControl.git
+   cd Singapore-Identity-Number-Validator-PCFControl
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Build the control**
    ```bash
    npm run build
    ```
 
-4. **Create a solution package** (using Power Platform CLI)
-   ```bash
-   pac solution init --publisher-name YourPublisher --publisher-prefix prefix
-   pac solution add-reference --path ./
-   msbuild /t:build /restore
-   ```
+4. **Push to your environment** (see [Pushing the Control](#pushing-the-control-to-a-power-platform-environment) above)
 
 5. **Import to Power Apps**
    - Navigate to [Power Apps](https://make.powerapps.com)
@@ -103,7 +146,7 @@ SingaporeNricValidator/
 1. Open your model-driven app or form
 2. Select the field you want to replace with the NRIC validator
 3. Click "Change component" or add a custom field
-4. Select "ecellors_NricFin.Validator"
+4. Select "ecellors_SingaporeNRICFINValidatorControl"
 5. Configure the `nricValue` property to bind to your data field
 6. Save and publish your form
 
@@ -114,7 +157,7 @@ SingaporeNricValidator/
 ### Validation Messages
 
 - **Valid NRIC/FIN**: Green message "Valid NRIC/FIN."
-- **Invalid Format**: Red message "Please enter a valid Singapore NRIC Number"
+- **Invalid Format**: Red message "Please enter a valid Singapore NRIC/FIN Number"
 - **Empty Field**: Gray message "Enter NRIC/FIN."
 
 ## How the Validation Works

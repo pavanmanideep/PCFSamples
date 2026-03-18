@@ -1,6 +1,6 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 
-export class SingaporeNricFinValidatorControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+export class SingaporeNRICFINValidatorControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
     private notifyOutputChanged: () => void;
     private inputElement: HTMLInputElement;
     private messageElement: HTMLDivElement;
@@ -107,7 +107,13 @@ export class SingaporeNricFinValidatorControl implements ComponentFramework.Stan
     private renderValidationMessage(): void {
         const validation = this.validateNric(this.currentValue);
         this.messageElement.textContent = validation.message;
-        this.messageElement.style.color = validation.isValid ? "#107C10" : "#A4262C";
+        if (validation.isValid) {
+            this.messageElement.style.color = "#107C10";
+        } else if (!this.currentValue) {
+            this.messageElement.style.color = "#605E5C";
+        } else {
+            this.messageElement.style.color = "#A4262C";
+        }
     }
 
     private validateNric(value: string): { isValid: boolean; message: string } {
@@ -154,6 +160,6 @@ export class SingaporeNricFinValidatorControl implements ComponentFramework.Stan
             return { isValid: false, message: "Please enter a valid Singapore NRIC/FIN Number" };
         }
 
-        return { isValid: true, message: "Enter NRIC/FIN." };
+        return { isValid: true, message: "Valid NRIC/FIN." };
     }
 }
