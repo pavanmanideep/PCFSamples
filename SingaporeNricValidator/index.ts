@@ -1,6 +1,6 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 
-export class SingaporeNricValidatorControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+export class SingaporeNricFinValidatorControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
     private notifyOutputChanged: () => void;
     private inputElement: HTMLInputElement;
     private messageElement: HTMLDivElement;
