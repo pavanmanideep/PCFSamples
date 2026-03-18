@@ -91,9 +91,7 @@ SingaporeNricValidator/
      Create a single line text column, let's say we create Singapore NRIC/FIN 
      <img width="959" height="410" alt="image" src="https://github.com/user-attachments/assets/cf55c19b-803d-48cf-be4a-f0bb83839472" />
      Bind this field to control, by attaching it to a component
-     <img width="935" height="314" alt="image" src="https://github.com/user-attachments/assets/d61f6d3f-a81b-47c9-8fe6-a2b36349fbb9" />
-
-     
+     <img width="721" height="305" alt="image" src="https://github.com/user-attachments/assets/796495a9-05be-4ac2-b323-2437f489423b" />   
 
 
 
