@@ -93,6 +93,7 @@ SingaporeNricValidator/
      Bind this field to control, by attaching it to a component
      <img width="721" height="305" alt="image" src="https://github.com/user-attachments/assets/796495a9-05be-4ac2-b323-2437f489423b" />   
 
+      <img width="686" height="267" alt="image" src="https://github.com/user-attachments/assets/4f24fa72-57fd-4925-b1f8-09a0682103ea" />
 
 
 
