@@ -130,6 +130,10 @@ Model Driven Apps
 
   <img width="948" height="233" alt="image" src="https://github.com/user-attachments/assets/0519e620-02e8-4676-aa57-556f0b270175" />
 
+  If you were interested in using this control, there is a managed solution in the Repo, you can install this solution in your environment, clone this repo, built control at your convenience following 
+
+  https://ecellorscrm.com/2023/02/23/run-pcf-code-components-in-browser-quick-recap/
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
