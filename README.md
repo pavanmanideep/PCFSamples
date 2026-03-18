@@ -68,19 +68,19 @@ SingaporeNricValidator/
 
   git clone **https://github.com/pavanmanideep/Singapore-Identity-Number-Validator-PCFControl.git**
    
-3. **Build the solution**
+2. **Build the solution**
    ```bash
    npm run build
    ```
 
-4. **Create a solution package** (using Power Platform CLI)
+3. **Create a solution package** (using Power Platform CLI)
    ```bash
    pac solution init --publisher-name YourPublisher --publisher-prefix prefix
    pac solution add-reference --path ./
    msbuild /t:build /restore
    ```
 
-5. **Import to Power Apps**
+4. **Import to Power Apps**
    - Navigate to [Power Apps](https://make.powerapps.com)
    - Go to Solutions
    - Import the managed solution package available for this control
